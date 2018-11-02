@@ -13,7 +13,7 @@
 
     body {
         background:linear-gradient(#fff,#41b883);
-        height: 3000px;
+        height: 2000px;
     }
 
     #sideWindow {
@@ -40,9 +40,11 @@
 </head>
 <body>
     <div id="sideWindow">
-        <div id="scroollBox">
+        <div ref="box" id="scroollBox">
             <div v-bind:style="styleObject"></div>
             <p>{{ scrollY }}</p>
+            <p>{{ pageHeight }}</p>
+            <p>{{ windowHeight }}</p>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
