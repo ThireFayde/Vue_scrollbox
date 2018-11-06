@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            list-style: none;
+        }
+        body {
+            height: 10000px;
+            position: relative;
+        }
+        body > div {
+            position: fixed;
+            width:20000px;
+            height: calc(100vh - 15px);
+            display: flex;
+        }
+        #XscrollBlock > div {
+            height: calc(100vh - 50px);
+            width: calc(100vw - 100px);
+            margin:10px 50px;
+            background:#ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="XscrollBlock" v-bind:style="styleObject">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

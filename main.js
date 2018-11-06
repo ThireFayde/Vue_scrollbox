@@ -51,3 +51,32 @@ var app = new Vue({
         }
     }
 });
+
+var Xscroll = new Vue({
+    el:'#XscrollBlock',
+    data: {
+        scrollX: 0,
+        scrollY: 0,
+        styleObject: {
+            transform: 'translateX(0)',
+            top:0,
+        }
+    },
+    created: function(){
+        window.addEventListener('scroll', this.handleScroll)
+        window.addEventListener('resize', this.handleResize)
+    },
+    beforeDestroy: function(){
+        window.removeEventListener('scroll', this.handleScroll)
+        window.removeEventListener('resize', this.handleResize)
+    },
+    methods: {
+        handleScroll: function(){
+            // this.scrollY =  window.scrollY;
+            // this.styleObject['top'] = this.scrollY+'px';
+            this.scrollX = window.scrollY * -2 ;
+            this.styleObject['transform'] = 'translateX(' + this.scrollX + 'px)';
+            console.log(this.scrollX)
+        }
+    }
+});
