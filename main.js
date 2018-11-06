@@ -70,6 +70,15 @@ var Xscroll = new Vue({
         window.removeEventListener('scroll', this.handleScroll)
         window.removeEventListener('resize', this.handleResize)
     },
+    mounted: function(){
+        if(window.scrollY<window.innerWidth * 7){
+            this.scrollX = window.scrollY * -2 ;
+            console.log(window.innerWidth);
+        }else{
+            this.scrollX = window.innerWidth * -14;
+        }
+        this.styleObject['transform'] = 'translateX(' + this.scrollX + 'px)';
+    },
     methods: {
         handleScroll: function(){
             // this.scrollY =  window.scrollY;

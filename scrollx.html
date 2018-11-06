@@ -18,17 +18,19 @@
         body > div {
             position: fixed;
             width:calc(100vw * 15);
-            height: calc(100vh - 15px);
+            height: calc(100vh);
             display: flex;
+            align-items: center;
+            background:linear-gradient(90deg,#fff,#41b883);
         }
         #XscrollBlock > div {
             height: calc(100vh - 50px);
             width: calc(100vw - 100px);
-            margin:10px 50px;
+            margin:0 50px;
             background:#ccc;
         }
         #XscrollBlock > div:nth-last-child(1){
-            background:blue;
+            /* background:blue; */
         }
         footer {
             width: 100%;
@@ -55,7 +57,7 @@
         <div></div>
         <div></div>
         <div></div>
-        <div></div>
+        <div>Last element</div>
     </div>
     <footer>
     </footer>
