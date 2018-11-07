@@ -1,12 +1,14 @@
 var app = new Vue({
     el: '#scroollBox',
     data: {
+        mouseY: 0,
         scrollY: 0,
         timer: null,
 
         berHeight: 0,
         boxHeight: 0,
-        
+        boxPosition: 0,
+
         pageHeight: document.documentElement.scrollHeight || document.body.scrollHeight,
         windowHeight: window.innerHeight,
 
@@ -40,6 +42,13 @@ var app = new Vue({
         this.styleObject['top'] = this.scrollY+'px';
     },
     methods: {
+        scrollJump:function(event){
+            this.boxPosition = this.$el.getBoundingClientRect();
+            this.mouseY = event.pageY - this.boxPosition.top - window.scrollY;
+            var jumpPosition = this.mouseY * this.pageHeight / this.$el.scrollHeight;
+            console.log(jumpPosition);
+            window.scroll(0,jumpPosition)
+        },
         handleScroll: function(){
             this.scrollY =  this.boxHeight * window.scrollY / this.pageHeight;
             this.styleObject['top'] = this.scrollY+'px';
@@ -73,7 +82,6 @@ var Xscroll = new Vue({
     mounted: function(){
         if(window.scrollY<window.innerWidth * 7){
             this.scrollX = window.scrollY * -2 ;
-            console.log(window.innerWidth);
         }else{
             this.scrollX = window.innerWidth * -14;
         }
@@ -85,7 +93,6 @@ var Xscroll = new Vue({
             // this.styleObject['top'] = this.scrollY+'px';
             if(window.scrollY<window.innerWidth * 7){
                 this.scrollX = window.scrollY * -2 ;
-                console.log(window.innerWidth);
             }else{
                 this.scrollX = window.innerWidth * -14;
             }
