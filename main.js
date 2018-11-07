@@ -51,7 +51,7 @@ var app = new Vue({
                 jumpPosition = 0;
             }else{
                 var mouseY = this.mouseY - this.berHeight/2
-                jumpPosition = mouseY * this.pageHeight / this.$el.scrollHeight;
+                jumpPosition = Math.floor(mouseY * this.pageHeight / this.$el.scrollHeight);
             }
             scroll.animateScroll(jumpPosition)
         },
