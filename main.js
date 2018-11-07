@@ -1,3 +1,4 @@
+var scroll = new SmoothScroll();
 var app = new Vue({
     el: '#scroollBox',
     data: {
@@ -52,7 +53,7 @@ var app = new Vue({
                 var mouseY = this.mouseY - this.berHeight/2
                 jumpPosition = mouseY * this.pageHeight / this.$el.scrollHeight;
             }
-            window.scroll(0,jumpPosition)
+            scroll.animateScroll(jumpPosition)
         },
         handleScroll: function(){
             this.scrollY =  this.boxHeight * window.scrollY / this.pageHeight;
