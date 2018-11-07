@@ -43,10 +43,15 @@ var app = new Vue({
     },
     methods: {
         scrollJump:function(event){
+            var jumpPosition;
             this.boxPosition = this.$el.getBoundingClientRect();
-            this.mouseY = event.pageY - this.boxPosition.top - window.scrollY;
-            var jumpPosition = this.mouseY * this.pageHeight / this.$el.scrollHeight;
-            console.log(jumpPosition);
+            this.mouseY = event.pageY - this.boxPosition.y - window.scrollY;
+            if(this.mouseY<this.berHeight/2){
+                jumpPosition = 0;
+            }else{
+                var mouseY = this.mouseY - this.berHeight/2
+                jumpPosition = mouseY * this.pageHeight / this.$el.scrollHeight;
+            }
             window.scroll(0,jumpPosition)
         },
         handleScroll: function(){

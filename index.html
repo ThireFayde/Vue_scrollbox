@@ -42,18 +42,15 @@
     <div id="sideWindow">
         <div ref="box" id="scroollBox" v-on:click="scrollJump">
             <div v-bind:style="styleObject"></div>
-            <p>{{ scrollY }}</p>
-            <p>{{ pageHeight }}</p>
-            <p>{{ windowHeight }}</p>
+            <p>BOX内のスクロール量：{{ scrollY }}</p>
+            <p>ページの縦要素：{{ pageHeight }}</p>
+            <p>ウインドウサイズ：{{ windowHeight }}</p>
             <p>{{ mouseY }}</p>
             <p>{{ boxPosition }}</p>
+            <p>{{ berHeight }}</p>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
-
-Y : boxH = pageH : pageY
-pageH boxH = Y pageY
-pageH = Y pageY / boxH
