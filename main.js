@@ -1,4 +1,3 @@
-var scroll = new SmoothScroll();
 var app = new Vue({
     el: '#scroollBox',
     data: {
